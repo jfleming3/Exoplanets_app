@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PlanetViewHolder"
-    android:background="@drawable/background2">
+    android:background="@drawable/image"
+    tools:context=".PlanetViewHolder">
 
     <TextView
         android:id="@+id/textView9"
