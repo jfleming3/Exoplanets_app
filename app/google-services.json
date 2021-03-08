@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "949219259621",
+    "project_id": "exoplanets-app",
+    "storage_bucket": "exoplanets-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:949219259621:android:e9b308ef5b64e85a5d100c",
+        "android_client_info": {
+          "package_name": "com.example.exoplanets_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "949219259621-69c74kbnjrbhj04u87jjgdg152lpd28s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCqHNanS1-gQBTzygPwZLGK8Ja8e9j9v50"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "949219259621-69c74kbnjrbhj04u87jjgdg152lpd28s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
