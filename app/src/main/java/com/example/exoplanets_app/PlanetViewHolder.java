@@ -1,11 +1,18 @@
 package com.example.exoplanets_app;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.ValueEventListener;
 
 public class PlanetViewHolder extends AppCompatActivity implements webButton{
 
@@ -28,6 +35,9 @@ public class PlanetViewHolder extends AppCompatActivity implements webButton{
         setupButtonWeb();
         setupButtonBack();
     }
+
+
+
 
     private void setupButtonBack(){
         buttonBack = findViewById(R.id.buttonBack);
