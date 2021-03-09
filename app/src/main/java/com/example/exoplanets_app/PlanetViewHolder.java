@@ -46,6 +46,10 @@ public class PlanetViewHolder extends AppCompatActivity implements webButton{
         Intent i = getIntent();
         planet = (Planet)i.getSerializableExtra("Planet");
         textViewName.setText(planet.getName());
+        textViewDistance.setText(planet.getDist());
+        textViewOrbit.setText(planet.getOrbit());
+        textViewHost.setText(planet.getHost());
+        textViewTravel.setText(planet.getTravel());
 
     }
 

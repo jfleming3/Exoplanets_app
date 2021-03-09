@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
                 //String key3 = myRef.child("Proxima Centauri b").push().getKey();
 
                 Intent detailActIntent = new Intent(view.getContext(), PlanetViewHolder.class);
-                detailActIntent.putExtra("Planet", planets.get(0));
+                detailActIntent.putExtra("Planet", planets.get(2));
                 startActivity(detailActIntent);
 
 
@@ -106,6 +106,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 Intent detailActIntent = new Intent(view.getContext(), PlanetViewHolder.class);
+                detailActIntent.putExtra("Planet", planets.get(0));
                 startActivity(detailActIntent);
             }
         });
@@ -119,6 +120,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 Intent detailActIntent = new Intent(view.getContext(), PlanetViewHolder.class);
+                detailActIntent.putExtra("Planet", planets.get(1));
                 startActivity(detailActIntent);
             }
         });
