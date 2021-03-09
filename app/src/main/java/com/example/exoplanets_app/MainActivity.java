@@ -22,35 +22,18 @@ public class MainActivity extends AppCompatActivity {
 
     Button buttonKep, buttonGJ, buttonProx;
     FirebaseDatabase database = FirebaseDatabase.getInstance();
-    DatabaseReference myRef = database.getReference("message");
+    DatabaseReference myRef = database.getReference("EXOPLANETS");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        String key = myRef.child("GJ 1061 c").push().getKey();
+        myRef.child("GJ 1061 c").setValue(new Planet("GJ 1061 c","Gliese 1061","12","6.7","221,387"));
 
 
 
-        myRef.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot){
-
-
-               // System.out.println(myRef.child("GJ 1061 c").child("Travel").get();
-
-               //Planet gj = new Planet("GJ 1061 c","Gliese 1061","12","6.7","221,387");
-               //myRef.setValue(gj);
-                String value = dataSnapshot.getValue(String.class);
-                Log.d("CIS3334", "Value is: " + value);
-            }
-
-            @Override
-            public void onCancelled(DatabaseError error) {
-                // Failed to read value
-              // Log.w("CIS3334", "Failed to read value.", error.toException());
-            }
-        });
 
 
         setupButtonGJ();
