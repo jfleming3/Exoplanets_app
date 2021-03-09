@@ -3,12 +3,14 @@ package com.example.exoplanets_app;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -19,7 +21,7 @@ public class PlanetViewHolder extends AppCompatActivity implements webButton{
 
     Button buttonWeb,buttonBack;
     TextView textViewName,textViewDistance,textViewOrbit,textViewHost,textViewTravel;
-
+    Planet planet;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,9 +36,18 @@ public class PlanetViewHolder extends AppCompatActivity implements webButton{
 
         setupButtonWeb();
         setupButtonBack();
+        planetInfo();
+
     }
 
 
+    public void planetInfo(){
+
+        Intent i = getIntent();
+        planet = (Planet)i.getSerializableExtra("Planet");
+        textViewName.setText(planet.getName());
+
+    }
 
 
     private void setupButtonBack(){
