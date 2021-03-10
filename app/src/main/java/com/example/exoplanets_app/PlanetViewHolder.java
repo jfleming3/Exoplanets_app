@@ -16,7 +16,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.ValueEventListener;
 
-public class PlanetViewHolder extends AppCompatActivity implements webButton{
+public class PlanetViewHolder extends AppCompatActivity {
 
 
     Button buttonWeb,buttonBack;
@@ -68,7 +68,7 @@ public class PlanetViewHolder extends AppCompatActivity implements webButton{
 
 
 
-    @Override
+
      public void setupButtonWeb() {
         buttonWeb = findViewById(R.id.buttonWeb);
 
