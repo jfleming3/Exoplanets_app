@@ -43,12 +43,12 @@ public class PlanetViewHolder extends AppCompatActivity {
 
 
 
-        imageViewPlanet.setImageResource(R.drawable.kepler);
+
 
         setupButtonWeb();
         setupButtonBack();
         planetInfo();
-
+        setupImage();
     }
 
 
@@ -63,6 +63,15 @@ public class PlanetViewHolder extends AppCompatActivity {
         textViewHost.setText(planet.getHost());
         textViewTravel.setText(planet.getTravel());
 
+    }
+
+    private void setupImage(){
+        if(planet.getName().matches("Kepler-1649 c"))
+            imageViewPlanet.setImageResource(R.drawable.kepler);
+        else if(planet.getName().matches("GJ 1061 c"))
+            imageViewPlanet.setImageResource(R.drawable.gj);
+        else
+            imageViewPlanet.setImageResource(R.drawable.proxima);
     }
 
 
