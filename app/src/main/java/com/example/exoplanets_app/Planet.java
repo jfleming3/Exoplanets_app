@@ -1,5 +1,7 @@
 package com.example.exoplanets_app;
 
+import android.graphics.drawable.Drawable;
+
 import java.io.Serializable;
 
 public class Planet implements Serializable {
@@ -9,17 +11,21 @@ public class Planet implements Serializable {
     private String dist;
     private String orbit;
     private String travel;
+    private String url;
+
 
     public Planet() {
     }
 
 
-    public Planet(String name, String host, String dist, String orbit, String travel) {
+    public Planet(String name, String host, String dist, String orbit, String travel, String url) {
         this.name = name;
         this.host = host;
         this.dist = dist;
         this.orbit = orbit;
         this.travel = travel;
+        this.url = url;
+
     }
 
 
@@ -61,5 +67,14 @@ public class Planet implements Serializable {
 
     public void setTravel(String travel) {
         this.travel = travel;
+    }
+
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
     }
 }

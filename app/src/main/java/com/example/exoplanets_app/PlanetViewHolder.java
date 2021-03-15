@@ -4,10 +4,12 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.android.gms.tasks.Task;
@@ -19,9 +21,12 @@ import com.google.firebase.database.ValueEventListener;
 public class PlanetViewHolder extends AppCompatActivity {
 
 
+
     Button buttonWeb,buttonBack;
     TextView textViewName,textViewDistance,textViewOrbit,textViewHost,textViewTravel;
+    ImageView imageViewPlanet;
     Planet planet;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,16 +34,23 @@ public class PlanetViewHolder extends AppCompatActivity {
         setContentView(R.layout.planet_view);
 
         textViewName = findViewById(R.id.textViewName);
+        imageViewPlanet = findViewById(R.id.imageViewPlanet);
         textViewDistance = findViewById(R.id.textViewDistance);
         textViewOrbit = findViewById(R.id.textViewOrbit);
         textViewHost = findViewById(R.id.textViewHost);
         textViewTravel = findViewById(R.id.textViewTravel);
+
+
+
+
+        imageViewPlanet.setImageResource(R.drawable.kepler);
 
         setupButtonWeb();
         setupButtonBack();
         planetInfo();
 
     }
+
 
 
     public void planetInfo(){
@@ -72,14 +84,14 @@ public class PlanetViewHolder extends AppCompatActivity {
      public void setupButtonWeb() {
         buttonWeb = findViewById(R.id.buttonWeb);
 
-        /*
+
 
 
         buttonWeb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                Uri webpage = Uri.parse("");
+                Uri webpage = Uri.parse(planet.getUrl());
                 Intent webIntent = new Intent(Intent.ACTION_VIEW, webpage);
                 if (webIntent.resolveActivity(getPackageManager()) != null) {
                     startActivity(webIntent);
@@ -88,7 +100,7 @@ public class PlanetViewHolder extends AppCompatActivity {
         });
 
 
-        */
+
 
     }
 
