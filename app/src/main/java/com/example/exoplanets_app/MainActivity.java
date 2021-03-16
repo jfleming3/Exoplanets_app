@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -24,6 +25,7 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
     Button buttonKep, buttonGJ, buttonProx;
+    ImageButton KepButton, gjButton, ProxButton;
     //FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference myRef; //= database.getReference("EXOPLANETS");
     ArrayList<Planet> planets;
@@ -33,6 +35,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+
+
 
         //firebase = new PlanetFirebaseData();
         //myRef = firebase.open();
@@ -81,15 +87,27 @@ public class MainActivity extends AppCompatActivity {
                 Intent detailActIntent = new Intent(view.getContext(), PlanetViewHolder.class);
                 detailActIntent.putExtra("Planet", planets.get(2));
                 startActivity(detailActIntent);
-
-
             }
         });
 
+
+        ProxButton = findViewById(R.id.ProxButton);
+        ProxButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                //String key3 = myRef.child("Proxima Centauri b").push().getKey();
+
+                Intent detailActIntent = new Intent(view.getContext(), PlanetViewHolder.class);
+                detailActIntent.putExtra("Planet", planets.get(2));
+                startActivity(detailActIntent);
+            }
+        });
     }
 
 
     private void setupButtonGJ(){
+
 
         buttonGJ = findViewById(R.id.buttonGJ);
         buttonGJ.setOnClickListener(new View.OnClickListener() {
@@ -101,12 +119,36 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(detailActIntent);
             }
         });
+
+
+        gjButton = findViewById(R.id.KepButton);
+        gjButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent detailActIntent = new Intent(view.getContext(), PlanetViewHolder.class);
+                detailActIntent.putExtra("Planet", planets.get(0));
+                startActivity(detailActIntent);
+            }
+        });
+
     }
 
     private void setupButtonKep(){
 
         buttonKep= findViewById(R.id.buttonKep);
         buttonKep.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent detailActIntent = new Intent(view.getContext(), PlanetViewHolder.class);
+                detailActIntent.putExtra("Planet", planets.get(1));
+                startActivity(detailActIntent);
+            }
+        });
+
+        KepButton = findViewById(R.id.KepButton);
+        KepButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
