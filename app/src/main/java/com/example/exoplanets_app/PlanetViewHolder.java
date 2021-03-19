@@ -40,11 +40,6 @@ public class PlanetViewHolder extends AppCompatActivity {
         textViewHost = findViewById(R.id.textViewHost);
         textViewTravel = findViewById(R.id.textViewTravel);
 
-
-
-
-
-
         setupButtonWeb();
         setupButtonBack();
         planetInfo();
@@ -58,10 +53,10 @@ public class PlanetViewHolder extends AppCompatActivity {
         Intent i = getIntent();
         planet = (Planet)i.getSerializableExtra("Planet");
         textViewName.setText(planet.getName());
-        textViewDistance.setText(planet.getDist());
-        textViewOrbit.setText(planet.getOrbit());
+        textViewDistance.setText(planet.getDist() + " Light Years");
+        textViewOrbit.setText(planet.getOrbit() + " Days");
         textViewHost.setText(planet.getHost());
-        textViewTravel.setText(planet.getTravel());
+        textViewTravel.setText(planet.getTravel() + " Years");
 
     }
 
@@ -84,18 +79,11 @@ public class PlanetViewHolder extends AppCompatActivity {
                 finish();
             }
         });
-
     }
-
-
 
 
      public void setupButtonWeb() {
         buttonWeb = findViewById(R.id.buttonWeb);
-
-
-
-
         buttonWeb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -107,11 +95,5 @@ public class PlanetViewHolder extends AppCompatActivity {
                 }
             }
         });
-
-
-
-
     }
-
-
 }

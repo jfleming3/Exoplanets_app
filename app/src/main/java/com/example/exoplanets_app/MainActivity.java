@@ -36,10 +36,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-
-
-
         //firebase = new PlanetFirebaseData();
         //myRef = firebase.open();
         //myRef.child("GJ 1061 c").setValue(new Planet("GJ 1061 c","Gliese 1061","12","6.7","221,387","https://exoplanets.nasa.gov/exoplanet-catalog/7592/gj-1061-c/"));
@@ -121,7 +117,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        gjButton = findViewById(R.id.KepButton);
+        gjButton = findViewById(R.id.gjButton);
         gjButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
